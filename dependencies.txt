@@ -14,3 +14,6 @@ node and npm
 
 ripgrep
 - sudo apt install ripgrep
+
+clipboard
+- sudo apt install xclip
