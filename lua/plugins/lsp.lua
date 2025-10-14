@@ -212,24 +212,32 @@ return {
     		),
 		},
 		bashls = {},
-	    ruff = {},
-		pylsp = {
+		-- Ruff for linting & formatting
+		ruff = {
+		  on_attach = function(client, _)
+			-- Let Ruff handle linting/formatting; no overlap with BasedPyright
+			client.server_capabilities.hoverProvider = false -- disable hover (Pyright handles this)
+		  end,
+		  init_options = {
 			settings = {
-				pylsp = {
-					plugins = {
-						pyflakes = {enabled = false},
-						pycodestyle = {enabled = false},
-						autopep8 = {enabled = false},
-						yapf = {enabled = false},
-						mccabe = {enabled = false},
-						pylsp_mypy = {enabled = false},
-						pylsp_black = {enabled = false},
-						pylsp_isort = {enabled = false}
-					}
-				}
-			}
+			  args = {}, -- You can pass extra CLI args here (e.g. "--extend-select", "I")
+			},
+		  },
 		},
-        -- gopls = {},
+		basedpyright = {
+			settings = {
+			  basedpyright = {
+				disableOrganizeImports = true, -- Ruff will handle import sorting
+				analysis = {
+				  typeCheckingMode = "strict", -- can be: off, basic, standard, strict
+				  autoImportCompletions = true,
+				  diagnosticMode = "workspace",
+				  useLibraryCodeForTypes = true,
+				},
+			  },
+			},
+		},
+		-- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
