@@ -237,6 +237,8 @@ return {
 			  },
 			},
 		},
+		html = { filetypes = { 'html', 'twing', 'hbs' } },
+		cssls = {},
 		-- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
