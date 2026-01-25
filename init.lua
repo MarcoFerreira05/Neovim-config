@@ -20,6 +20,5 @@ require('lazy').setup({
 	require 'plugins.lsp',
 	require 'plugins.autocompletion',
 	require 'plugins.which-key',
-	require 'plugins.autopairs',
-	require 'plugins.autotag'
+	require 'plugins.autopairs'
 })
