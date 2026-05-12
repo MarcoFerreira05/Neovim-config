@@ -36,7 +36,7 @@ vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('n', '<leader>v', '<C-w>v', opts)
 
 -- space h => split window horizontally
-vim.keymap.set('n', '<leader>h', '<C-w>h', opts)
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts)
 
 -- space se => make split windows have equal width and height
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts)
