@@ -1,5 +1,6 @@
 return {
   "uhs-robert/oasis.nvim",
+  commit = "dfe296b",
   lazy = false,
   priority = 1000,
   config = function()
